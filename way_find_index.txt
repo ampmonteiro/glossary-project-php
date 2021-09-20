@@ -1,0 +1,49 @@
+    // foreach ($items as $k => $v) {
+
+    //     if ($v->term === $term) {
+
+    //         $idx = $k;
+    //         break;
+    //     }
+    // }
+
+
+    // $new = array_splice($items, $idx);
+
+    $ind = array_search($term,  array_column($items, 'term'));
+    $d = array_splice($items, $ind);
+
+    echo '<pre>';
+
+    print_r($items);
+
+    // echo "<br>";
+
+    // print_r($new);
+
+    // exit;
+
+    // #print_r(array_search($term, array_keys($items, 'term')));
+
+
+
+    // echo '<br>======== <br>';
+
+    print_r($d);
+
+    exit;
+    // echo '======== <br>';
+
+    // # print_r($del);
+
+    // echo '======== <br>';
+
+    // # echo json_encode($del);
+
+
+    // exit;
+
+
+    # rebuild array 
+
+    #$new_terms = array_values($items);
