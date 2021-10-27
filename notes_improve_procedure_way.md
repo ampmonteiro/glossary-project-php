@@ -40,6 +40,8 @@
 
 - in **all app** and **forms**, create a better UI (with boostrap 5) &#9989;
 
+- all pages (where is business logic) should use clean url
+ 
 - in **login**, password should not be sanitize
 
 - the **logout**, should be inside of admin
