@@ -6,7 +6,7 @@ session_start();
 
 require 'app/app.php';
 
-$view_bag = [
+$data = [
     'title'  => 'Login',
 ];
 
@@ -28,13 +28,13 @@ if (is_post()) {
         $_SESSION['email'] = $email;
         redirect('admin/');
     } else {
-        $view_bag['status'] = 'the provided credentials did not work';
+        $data['status'] = 'the provided credentials did not work';
     }
 
     if ($email === false) {
 
-        $view_bag['status'] = 'Please enter a valid email address';
+        $data['status'] = 'Please enter a valid email address';
     }
 }
 
-view('login');
+view('login', $data);

@@ -5,7 +5,8 @@ session_start();
 require '../app/app.php';
 
 ensure_user_is_authenticated();
-$view_bag = [
+
+$data = [
     'title'  => 'Delete Term',
 ];
 
@@ -29,7 +30,9 @@ if (is_get()) {
         die();
     }
 
-    view('admin/delete', $term);
+    $data['item'] = $term;
+
+    view('admin/delete', $data);
 }
 
 if (is_post()) {

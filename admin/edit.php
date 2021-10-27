@@ -5,7 +5,8 @@ session_start();
 require '../app/app.php';
 
 ensure_user_is_authenticated();
-$view_bag = [
+
+$data = [
     'title'  => 'Edit Term',
 ];
 
@@ -29,7 +30,9 @@ if (is_get()) {
         die();
     }
 
-    view('admin/edit', $term);
+    $data['item'] = $term;
+
+    view('admin/edit', $data);
 }
 
 if (is_post()) {

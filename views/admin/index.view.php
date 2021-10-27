@@ -1,13 +1,15 @@
 <h1 class="text-center">
-    <?= $view_bag['title'] ?>
+    <?= $data['title'] ?>
 </h1>
+<pre>
 
+</pre>
 <section class="my-3 text-right">
     <a href="create.php">Create new term</a>
 </section>
 
 <table class="table table-striped">
-    <?php foreach ($model as $item) : ?>
+    <?php foreach ($data['items'] as $item) : ?>
         <tr>
             <td>
                 <a href="edit.php?key=<?= $item->term ?>">

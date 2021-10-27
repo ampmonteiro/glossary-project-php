@@ -14,8 +14,8 @@
 <p>
     <?php
 
-    if (isset($view_bag['status'])) {
-        echo $view_bag['status'];
+    if (isset($data['status'])) {
+        echo $data['status'];
     }
 
     ?>

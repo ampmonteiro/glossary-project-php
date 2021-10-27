@@ -1,6 +1,7 @@
-<h1 class="text-center"><?= $view_bag['title'] ?></h1>
+<h1 class="text-center">
+    <?= $data['title'] . $data['item']->term; ?>
+</h1>
 
-<div>
-
-    <?= $model->definition  ?>
-</div>
+<p>
+    <?= $data['item']->definition  ?>
+</p>

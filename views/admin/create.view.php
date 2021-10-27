@@ -1,5 +1,5 @@
 <h1 class="text-center">
-    <?= $view_bag['title'] ?>
+    <?= $data['title'] ?>
 </h1>
 
 <form class="w-50 mx-md-auto mt-3" method="post">

@@ -5,9 +5,9 @@
 
 - all fn should be using **strong type** and **stricly mode**, PHP 7.0 &#9989;
 
-- fn **redirect** use exit instead of die, since do not pass a value
+- fn **redirect** use exit instead of die, since do not pass a value &#9989;
 
-- fn **view** avoid use global, so the view_bag should pass as param, instead of calling as model change to data
+- fn **view** avoid use global, so the view_bag should pass as param, instead of calling as model change to data &#9989;
 
 - fn **sanitize**, for now only is applied to string, make others branches to be apply to numbers or html 
 

@@ -6,7 +6,7 @@ require '../app/app.php';
 ensure_user_is_authenticated();
 
 
-$view_bag = [
+$data = [
     'title'  => 'Create Term',
 ];
 
@@ -25,4 +25,4 @@ if (is_post()) {
     }
 }
 
-view('admin/create');
+view('admin/create', $data);

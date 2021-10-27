@@ -6,13 +6,11 @@ declare(strict_types=1);
 function redirect(string $url): void
 {
     header("location:{$url}");
-    die();
+    exit;
 }
 
-function view(string $file, array | object $model = []): void
+function view(string $file, array | object $data = []): void
 {
-    global $view_bag;
-
     require APP_PATH . "views/layout.view.php";
 }
 

@@ -6,8 +6,9 @@ require '../app/app.php';
 
 ensure_user_is_authenticated();
 
-$view_bag = [
+$data = [
     'title'  => 'Glossary Admin List',
+    'items'  => get_terms()
 ];
 
 // $items = [];
@@ -20,4 +21,4 @@ $view_bag = [
 //     $items = get_terms();
 // }
 
-view('admin/index', get_terms());
+view('admin/index', $data);

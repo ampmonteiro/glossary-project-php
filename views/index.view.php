@@ -1,5 +1,5 @@
 <h1 class="text-center">
-    <?= $view_bag['heading'] ?>
+    <?= $data['heading'] ?>
 </h1>
 
 <form>
@@ -10,7 +10,7 @@
 </form>
 
 <table class="table table-striped">
-    <?php foreach ($model as $item) : ?>
+    <?php foreach ($data['items'] as $item) : ?>
         <tr>
             <td>
                 <a href="detail.php?term=<?= $item->term ?> ">
