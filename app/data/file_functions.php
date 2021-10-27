@@ -1,13 +1,16 @@
 <?php
 
-function get_terms($ar = false)
+declare(strict_types=1);
+
+function get_terms(bool $assoc = false): array
 {
     $json = get_data();
 
-    return  json_decode($json, $ar);
+    return  json_decode($json, $assoc);
 }
 
-function get_term($term)
+// using union types in return value, PHP 8 feature
+function get_term(string $term): object | bool
 {
     $terms = get_terms();
     foreach ($terms as $item) {
@@ -20,7 +23,7 @@ function get_term($term)
     return false;
 }
 
-function update_term($original_term, $new_term, $definition)
+function update_term(string $original_term, string $new_term, string $definition): void
 {
     $terms = get_terms();
 
@@ -37,7 +40,7 @@ function update_term($original_term, $new_term, $definition)
 }
 
 
-function search_terms($search)
+function search_terms(string $search): array
 {
     $terms = get_terms();
 
@@ -55,7 +58,7 @@ function search_terms($search)
 }
 
 
-function add_term($term, $definition)
+function add_term(string $term, string $definition): void
 {
     $items = get_terms();
 
@@ -72,7 +75,7 @@ function add_term($term, $definition)
 }
 
 
-function delete_term($term)
+function delete_term(string $term): void
 {
     $terms = get_terms();
 
@@ -102,7 +105,7 @@ function delete_term($term)
     set_data($items);
 }
 
-function get_data()
+function get_data(): string
 {
 
     $fname = CONFIG['data_file'];
@@ -119,7 +122,7 @@ function get_data()
 }
 
 
-function set_data($ar)
+function set_data(array $ar): void
 {
     $fname = CONFIG['data_file'];
 

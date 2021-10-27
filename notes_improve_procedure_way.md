@@ -1,9 +1,11 @@
 # Notes to improve the code  &#9989;
 
 ## In functions:
-- all fn should be using **strong type** and **stricly mode**, PHP 7.' 
+- all fn should be using **strong type** and **stricly mode**, PHP 7. &#9989;
 
--  fn **redirect** use exit instead of die, since do not pass a value
+- all fn should be using **strong type** and **stricly mode**, PHP 7.0 &#9989;
+
+- fn **redirect** use exit instead of die, since do not pass a value
 
 - fn **view** avoid use global, so the view_bag should pass as param, instead of calling as model change to data
 
@@ -11,7 +13,6 @@
 
 ## In data > file_functions 
 
-- all fn should be using **strong type** and **stricly mode**, PHP 7.0
 
 - fn **get_data**, change name of variable json to data because only return string
 
