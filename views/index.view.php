@@ -1,6 +1,18 @@
 <h1 class="text-center">
     <?= $data['heading'] ?>
 </h1>
+hash:
+<?php
+
+
+$pwd = password_hash('123', PASSWORD_DEFAULT);
+
+echo $pwd . '<br>';
+
+$rs = password_verify('123', $pwd);
+
+var_dump($rs);
+?>
 
 <form>
     <section class="form-floating mb-3">

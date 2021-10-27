@@ -47,7 +47,9 @@ function authenticate_user(string $email, string $password): bool
 
     $user_password = $users[$email];
 
-    return $password === $user_password;
+    // return $password === $user_password;
+
+    return password_verify($password, $user_password);
 }
 
 function is_user_authenticated(): bool

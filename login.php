@@ -21,7 +21,7 @@ if (is_post()) {
         note:  should not be sanitize, should be hashed instead
         https://stackoverflow.com/questions/45538138/is-it-advisable-to-clean-password-input-too/45538150
     */
-    $password = sanitize($_POST['password']);
+    $password = $_POST['password'];
 
     # compare with file store
     if (authenticate_user($email, $password)) {

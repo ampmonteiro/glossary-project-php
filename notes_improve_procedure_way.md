@@ -43,7 +43,9 @@
 
 - all pages (where is business logic) should use clean url
  
-- in **login**, password should not be sanitize
+- in **login**, password should not be sanitize &#9989;
+
+- **password** should be hashed &#9989;
 
 - the **logout**, should be inside of admin
 
