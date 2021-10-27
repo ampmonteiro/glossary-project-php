@@ -3,9 +3,9 @@
 </h1>
 
 <form>
-    <section class="mb-3">
-        <label for="search">Search term:</label>
+    <section class="form-floating mb-3">
         <input name="search" class="form-control" id="search" placeholder="">
+        <label for="search">Search term</label>
     </section>
 </form>
 

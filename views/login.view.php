@@ -1,15 +1,15 @@
-<form method="post" class="w-50 mx-auto">
-    <div class="form-group">
+<form method="post" class="w-50 mx-auto card card-body">
+    <div class="form-floating mb-3">
+        <input class="form-control" id="email" name="email" placeholder="">
         <label for="email">Email</label>
-        <input class="form-control" id="email" name="email">
     </div>
-    <div class="form-group">
+    <div class="form-floating ">
+        <input class="form-control" type="password" id="password" name="password" placeholder="">
         <label for="password">Password</label>
-        <input class="form-control" type="password" id="password" name="password">
     </div>
-    <div class="mt-4">
-        <button class="btn btn-primary">login</button>
-    </div>
+
+    <button class="btn btn-primary mt-4 text-center w-100 p-3">login</button>
+
 </form>
 <p>
     <?php

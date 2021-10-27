@@ -2,17 +2,18 @@
     <?= $view_bag['title'] ?>
 </h1>
 
-<form method="post">
-    <section class="mb-3">
+<form class="w-50 mx-md-auto mt-3" method="post">
+    <section class="form-floating mb-3">
+        <input class="form-control" name="term" id="term" placeholder="">
         <label for="term">Term</label>
-        <input name="term" id="term" placeholder="">
-    </section>
-    <section class="mb-3">
-        <label for="def">Definition</label>
-        <textarea name="definition" id="def" placeholder=""> </textarea>
-    </section>
-    <section class="text-center">
-        <button class="btn btn-primary ">Create</button>
     </section>
 
+    <section class="form-floating my-3">
+        <textarea class="form-control h-50" style="white-space:pre-line;" name="definition" id="def" placeholder=""></textarea>
+        <label for="def">Definition</label>
+    </section>
+
+    <section class="w-100 text-center">
+        <button class="btn btn-primary ">Create</button>
+    </section>
 </form>

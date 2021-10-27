@@ -1,7 +1,7 @@
-# Notes to improve the code
+# Notes to improve the code  &#9989;
 
 ## In functions:
-- all fn should be using **strong type** and **stricly mode**, PHP 7.'
+- all fn should be using **strong type** and **stricly mode**, PHP 7.' 
 
 -  fn **redirect** use exit instead of die, since do not pass a value
 
@@ -38,7 +38,7 @@
 
 ## others improvements
 
-- in **login**, create a better UI (with boostrap 5)
+- in **all app** and **forms**, create a better UI (with boostrap 5) &#9989;
 
 - in **login**, password should not be sanitize
 
