@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+session_start();
+
 require 'app/app.php';
 
 $data = [
@@ -17,5 +19,6 @@ if (isset($_GET['search'])) {
 
     $data['items'] = get_terms();
 }
+
 
 view('index', $data);
