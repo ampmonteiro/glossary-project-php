@@ -1,3 +1,9 @@
+<?php
+
+$is_auth = is_user_authenticated();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,14 +21,24 @@
 
 <body>
 
-    <nav class="bg-dark text-white py-4">
-        <div class="container">
+    <header class="bg-dark text-white py-4">
+        <section class="container d-flex  justify-content-between">
             <a class="navbar-brand" href="/">
                 PHP Fundamentals:
                 <?= $data['title'] ?? '--' ?>
             </a>
-        </div>
-    </nav>
+            <?php if ($is_auth) : ?>
+
+                <nav class="d-flex gap-5 align-items-center">
+                    <a class="text-decoration-none link-success" href="/admin/">Admin</a>
+                    <a class="btn btn-danger" href="/logout/">Logout</a>
+                </nav>
+
+            <?php else : ?>
+                <a class="btn btn-outline-primary" href="/login">Login</a>
+            <?php endif ?>
+        </section>
+    </header>
 
     <div class="container mt-3">
         <?php require $file . '.view.php'; ?>

@@ -49,9 +49,7 @@
 
 - the **logout**, should be inside of admin
 
-- in **admin/index**, should be using a spcific layout, where shows email and btn logout
-
-- in **main layout**, should show login link
+- in **main layout** > **nav menu**, show btn login / logout and admin link if is login or not  &#9989;
 
 - **app** folder, should be called core or something
 
