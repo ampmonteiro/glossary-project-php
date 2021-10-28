@@ -1,5 +1,5 @@
 <h1 class="text-center">
-    <?= $data['heading'] ?>
+    <?= $heading ?>
 </h1>
 
 <form>
@@ -10,15 +10,15 @@
 </form>
 
 <table class="table table-striped">
-    <?php foreach ($data['items'] as $item) : ?>
+    <?php foreach ($items as $item) : ?>
         <tr>
             <td>
-                <a href="/detail?term=<?= $item->term ?> ">
-                    <?= $item->term; ?>
+                <a href="/detail?term=<?= $item['term'] ?> ">
+                    <?= $item['term']; ?>
                 </a>
             </td>
             <td>
-                <?= $item->definition; ?>
+                <?= $item['definition']; ?>
             </td>
         </tr>
     <?php endforeach; ?>

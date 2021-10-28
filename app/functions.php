@@ -9,8 +9,11 @@ function redirect(string $url): void
     exit;
 }
 
-function view(string $file, array | object $data = []): void
+function view(string $file, array $data = []): void
 {
+
+    extract($data);
+
     require APP_PATH . "views/layout.view.php";
 }
 
@@ -47,8 +50,6 @@ function authenticate_user(string $email, string $password): bool
 
     $user_password = $users[$email];
 
-    // return $password === $user_password;
-
     return password_verify($password, $user_password);
 }
 
@@ -60,6 +61,6 @@ function is_user_authenticated(): bool
 function ensure_user_is_authenticated(): void
 {
     if (!is_user_authenticated()) {
-        redirect('../login.php'); #  find a better way, because if it was in subfolder ???
+        redirect('login');
     }
 }

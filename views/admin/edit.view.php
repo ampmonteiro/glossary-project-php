@@ -1,12 +1,12 @@
 <h1 class="text-center">
-    <?= $data['title'] ?>
+    <?= $title; ?>
 </h1>
 
 <form class="w-50 mx-md-auto mt-3" method="post">
-    <input type="hidden" name="original-term" value="<?= $data['item']->term ?>">
+    <input type="hidden" name="original-term" value="<?= $item['term']; ?>">
 
     <section class="form-floating mb-3">
-        <input class="form-control" name="term" value="<?= $data['item']->term ?>" id="term" placeholder="">
+        <input class="form-control" name="term" value="<?= $item['term']; ?>" id="term" placeholder="">
         <label for="term">Term</label>
     </section>
     <!-- 
@@ -15,7 +15,7 @@
     -->
     <section class="form-floating mb-3">
         <textarea class="form-control h-50" style="white-space:pre-line;" name="definition" id="def" placeholder="">
-            <?= $data['item']->definition ?>        
+            <?= trim($item['definition']); ?>        
         </textarea>
         <label for="def">Definition</label> <br>
     </section>

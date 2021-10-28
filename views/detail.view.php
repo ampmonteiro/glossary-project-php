@@ -1,7 +1,7 @@
 <h1 class="text-center">
-    <?= $data['title'] . $data['item']->term; ?>
+    <?= $title . $item['term']; ?>
 </h1>
 
 <p>
-    <?= $data['item']->definition  ?>
+    <?= $item['definition']  ?>
 </p>

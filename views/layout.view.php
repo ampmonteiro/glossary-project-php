@@ -13,7 +13,7 @@ $is_auth = is_user_authenticated();
 
     <title>
         PHP Fundamentals:
-        <?= $data['title'] ?? '--' ?>
+        <?= $title ?? '--' ?>
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -25,7 +25,7 @@ $is_auth = is_user_authenticated();
         <section class="container d-flex  justify-content-between">
             <a class="navbar-brand" href="/">
                 PHP Fundamentals:
-                <?= $data['title'] ?? '--' ?>
+                <?= $title ?? '--' ?>
             </a>
             <?php if ($is_auth) : ?>
 

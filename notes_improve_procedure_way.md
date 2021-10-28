@@ -14,11 +14,9 @@
 ## In data > file_functions 
 
 
-- fn **get_data**, change name of variable json to data because only return string
+- fn **get_data**, change name of variable json to data because only return string &#9989;
 
-- fn **get_terms**, create a params that give a possibility when decode the data, do it as assoc array
-
-- using **array assoc** instead of obj when decode data, update the fn for data
+- using **array assoc** instead of obj when decode data, update the fn for data &#9989;
 
 - fn **get_terms**, it is called in all fn, try to centralizing in variable, maybe calling only is calling the controller ???
 
