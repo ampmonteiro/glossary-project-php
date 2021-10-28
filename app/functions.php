@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 function redirect(string $url): void
 {
-    header("location:{$url}");
+    header("location:/{$url}");
     exit;
 }
 

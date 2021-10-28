@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 session_start();
 
-require 'app/app.php';
+require '../app/app.php';
 
 $data = [
     'title'  => 'Login',
 ];
 
 if (is_user_authenticated()) {
-    redirect('admin/');
+    redirect('admin');
 }
 
 if (is_post()) {
@@ -26,7 +26,7 @@ if (is_post()) {
     # compare with file store
     if (authenticate_user($email, $password)) {
         $_SESSION['email'] = $email;
-        redirect('admin/');
+        redirect('admin');
     } else {
         $data['status'] = 'the provided credentials did not work';
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require 'app/app.php';
+require '../app/app.php';
 
 $data = [
     'title' => 'Detail for: '

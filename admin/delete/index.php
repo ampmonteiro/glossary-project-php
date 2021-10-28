@@ -2,12 +2,12 @@
 
 session_start();
 
-require '../app/app.php';
+require '../../app/app.php';
 
 ensure_user_is_authenticated();
 
 $data = [
-    'title'  => 'Edit Term',
+    'title'  => 'Delete Term',
 ];
 
 # i think the verify get is une
@@ -32,18 +32,16 @@ if (is_get()) {
 
     $data['item'] = $term;
 
-    view('admin/edit', $data);
+    view('admin/delete', $data);
 }
 
 if (is_post()) {
     $term = sanitize($_POST['term']);
-    $definition = sanitize($_POST['definition']);
-    $original_term = sanitize($_POST['original-term']);
 
-    if (empty($term) || empty($definition) || empty($original_term)) {
+    if (empty($term)) {
         # Todo dpl msg
     } else {
-        update_term($original_term, $term, $definition);
-        redirect('index.php');
+        delete_term($term);
+        redirect('admin');
     }
 }

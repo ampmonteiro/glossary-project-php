@@ -5,14 +5,14 @@
 
 </pre>
 <section class="my-3 text-right">
-    <a href="create.php">Create new term</a>
+    <a href="create/">Create new term</a>
 </section>
 
 <table class="table table-striped">
     <?php foreach ($data['items'] as $item) : ?>
         <tr>
             <td>
-                <a href="edit.php?key=<?= $item->term ?>">
+                <a href="edit/?key=<?= $item->term ?>">
                     Edit
                 </a>
             </td>
@@ -23,7 +23,7 @@
                 <?= $item->definition; ?>
             </td>
             <td>
-                <a href="delete.php?key=<?= $item->term ?>">
+                <a href="delete/?key=<?= $item->term ?>">
                     Delete
                 </a>
             </td>

@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-require '../app/app.php';
+require '../../app/app.php';
 
 ensure_user_is_authenticated();
-
 
 $data = [
     'title'  => 'Create Term',
@@ -21,7 +20,7 @@ if (is_post()) {
         # Todo dpl msg
     } else {
         add_term($term, $definition);
-        redirect('index.php');
+        redirect('admin/');
     }
 }
 

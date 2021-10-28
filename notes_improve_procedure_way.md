@@ -41,7 +41,7 @@
 
 - in **all app** and **forms**, create a better UI (with boostrap 5) &#9989;
 
-- all pages (where is business logic) should use clean url
+- all pages (where is business logic) should use clean url &#9989;
  
 - in **login**, password should not be sanitize &#9989;
 
