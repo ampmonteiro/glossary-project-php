@@ -20,4 +20,4 @@ $view_bag = [
 //     $items = get_terms();
 // }
 
-view('admin/index', get_terms());
+view('admin/index', Data::get_terms());

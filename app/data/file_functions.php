@@ -1,5 +1,8 @@
 <?php
 
+require 'glossaryterm.class.php';
+
+
 function get_terms($ar = false)
 {
     $json = get_data();
@@ -59,14 +62,7 @@ function add_term($term, $definition)
 {
     $items = get_terms();
 
-    $ar = [
-        'term' => $term,
-        'definition' => $definition
-    ];
-
-    $obj = (object) $ar;
-
-    $items[] = $obj;
+    $items[] = new GloassaryTerm($term, $definition);
 
     set_data($items);
 }
