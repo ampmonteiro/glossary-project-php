@@ -22,7 +22,7 @@ if (is_get()) {
         die();
     }
 
-    $term = Model::get_term($key);
+    $term = Model::getTerm($key);
 
     # more like data provided no exist
     if ($term == false) {
@@ -43,7 +43,7 @@ if (is_post()) {
     if (empty($term) || empty($definition) || empty($original_term)) {
         # Todo dpl msg
     } else {
-        Model::update_term($original_term, $term, $definition);
+        Model::updateTerm($original_term, $term, $definition);
         redirect('admin/');
     }
 }

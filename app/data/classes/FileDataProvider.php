@@ -10,18 +10,17 @@ class FileDataProvider implements DataProviderInterface
         $this->source = $source;
     }
 
-
-    public function get_terms()
+    public function getTerms()
     {
-        $data = $this->get_data();
+        $data = $this->getData();
 
         return  json_decode($data, true);
     }
 
     // using union types in return value, PHP 8 feature
-    public function get_term($term)
+    public function getTerm($term)
     {
-        $terms = $this->get_terms();
+        $terms = $this->getTerms();
         foreach ($terms as $item) {
 
             if ($item['term'] == $term) {
@@ -31,15 +30,15 @@ class FileDataProvider implements DataProviderInterface
         return false;
     }
 
-    public function update_term($original_term, $new_term, $definition)
+    public function updateTerm($originalTerm, $newTerm, $definition)
     {
-        $terms = $this->get_terms();
+        $terms = $this->getTerms();
 
         foreach ($terms as $key => $item) {
 
-            if ($item['term'] == $original_term) {
+            if ($item['term'] == $originalTerm) {
 
-                $item['term'] = $new_term;
+                $item['term'] = $newTerm;
                 $item['definition'] = $definition;
 
                 $terms[$key] = $item;
@@ -47,13 +46,12 @@ class FileDataProvider implements DataProviderInterface
             }
         }
 
-        $this->set_data($terms);
+        $this->setData($terms);
     }
 
-
-    public function search_terms($search)
+    public function searchTerms($search)
     {
-        $terms = $this->get_terms();
+        $terms = $this->getTerms();
 
         $results = array_filter($terms, function ($item) use ($search) {
 
@@ -68,27 +66,30 @@ class FileDataProvider implements DataProviderInterface
         return $results;
     }
 
-    public function add_term($term, $definition)
+    public function addTerm($term, $definition)
     {
-        $items = $this->get_terms();
+        $items = $this->getTerms();
 
         $items[] =  [
             'term' => $term,
             'definition' => $definition
         ];
 
-        $this->set_data($items);
+        $this->setData($items);
     }
 
-    public function delete_term($term)
+    public function deleteTerm($term)
     {
-        $terms = $this->get_terms();
+        $terms = $this->getTerms();
 
         /* 
       my note: 
           this should not use in indexed array 
           only in assoc array
-      
+   
+      note: 
+          because of unset, you need to create new indexed array
+          with correted sequence index values 
       */
 
         for ($i = 0; $i < count($terms); $i++) {
@@ -99,20 +100,13 @@ class FileDataProvider implements DataProviderInterface
             }
         }
 
-        /*     
-      note: 
-          because of unset, you need to create new indexed array
-          with correted sequence index values 
-      */
-
         $items = array_values($terms);
 
-        $this->set_data($items);
+        $this->setData($items);
     }
 
-    private function get_data()
+    private function getData()
     {
-
         $data = '';
 
         if (!file_exists($this->source)) {
@@ -124,8 +118,7 @@ class FileDataProvider implements DataProviderInterface
         return $data;
     }
 
-
-    private function set_data($ar)
+    private function setData($ar)
     {
         $data = json_encode($ar, JSON_PRETTY_PRINT);
 

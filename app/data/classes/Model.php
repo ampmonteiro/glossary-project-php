@@ -9,38 +9,38 @@ class Model
 
     private static $ds;
 
-    public static function initialize(DataProviderInterface $data_provider)
+    public static function initialize(DataProviderInterface $dataProvider)
     {
-        static::$ds = $data_provider;
+        static::$ds = $dataProvider;
     }
 
-    public static function get_terms()
+    public static function getTerms()
     {
-        return static::$ds->get_terms();
+        return static::$ds->getTerms();
     }
 
-    public static function get_term($term)
+    public static function getTerm($term)
     {
-        return static::$ds->get_term($term);
+        return static::$ds->getTerm($term);
     }
 
-    public static function search_terms($search)
+    public static function searchTerms($search)
     {
-        return static::$ds->search_terms($search);
+        return static::$ds->searchTerms($search);
     }
 
-    public static function add_term($term, $definition)
+    public static function addTerm($term, $definition)
     {
-        return static::$ds->add_term($term, $definition);
+        return static::$ds->addTerm($term, $definition);
     }
 
-    public static function update_term($original_term, $new_term, $definition)
+    public static function updateTerm($originalTerm, $newTerm, $definition)
     {
-        return static::$ds->update_term($original_term, $new_term, $definition);
+        return static::$ds->updateTerm($originalTerm, $newTerm, $definition);
     }
 
-    public static function delete_term($term)
+    public static function deleteTerm($term)
     {
-        return static::$ds->delete_term($term);
+        return static::$ds->deleteTerm($term);
     }
 }

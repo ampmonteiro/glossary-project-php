@@ -4,7 +4,7 @@
 
 - all files with .class ext should go into class folder &#9989;
 
-- named of properties and methods should be in camelCase: get_terms -> getTerms, $data_provider -> $dataProvider
+- named of properties and methods should be in camelCase: get_terms -> getTerms, $data_provider -> $dataProvider &#9989;
 
 ## data file
 

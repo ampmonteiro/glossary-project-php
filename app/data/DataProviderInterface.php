@@ -5,16 +5,15 @@
 
 interface DataProviderInterface
 {
-    public function get_terms();
+    public function getTerms();
 
-    // using union types in return value, PHP 8 feature
-    public function get_term($term);
+    public function getTerm($term);
 
-    public function update_term($original_term, $new_term, $definition);
+    public function updateTerm($original_term, $new_term, $definition);
 
-    public function search_terms($search);
+    public function searchTerms($search);
 
-    public function add_term($term, $definition);
+    public function addTerm($term, $definition);
 }
 
 // class DataProvider
