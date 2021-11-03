@@ -1,6 +1,6 @@
 <?php
 
-require 'dataprovider.class.php';
+require 'DataProvider.php';
 
 class Data
 {

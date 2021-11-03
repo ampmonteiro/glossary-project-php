@@ -15,8 +15,9 @@ require 'config.php';
 require 'functions.php';
 
 // require 'data/file_functions.php';
-require 'data/data.class.php';
 
-require 'data/filedataprovider.class.php';
+require 'data/classes/Data.php';
+
+require 'data/classes/FileDataProvider.php';
 
 Data::initialize(new FileDataProvider(CONFIG['data_file']));

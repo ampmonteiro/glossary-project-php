@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class GlossaryTerm
 {
     function __construct($term, $definition)

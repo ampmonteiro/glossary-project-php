@@ -5,7 +5,7 @@ declare(strict_types=1);
 class FileDataProvider extends DataProvider
 {
 
-    public function get_terms(): array
+    public function get_terms()
     {
         $data = $this->get_data();
 
@@ -61,7 +61,6 @@ class FileDataProvider extends DataProvider
 
         return $results;
     }
-
 
     public function add_term($term, $definition)
     {
