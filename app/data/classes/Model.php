@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Model
 {
     /**
@@ -14,33 +16,33 @@ class Model
         static::$ds = $dataProvider;
     }
 
-    public static function getTerms()
+    public static function getTerms(): array
     {
         return static::$ds->getTerms();
     }
 
-    public static function getTerm($term)
+    public static function getTerm(string $term): array | bool
     {
         return static::$ds->getTerm($term);
     }
 
-    public static function searchTerms($search)
+    public static function searchTerms(string $search): array
     {
         return static::$ds->searchTerms($search);
     }
 
-    public static function addTerm($term, $definition)
+    public static function addTerm(string $term, string $definition): void
     {
-        return static::$ds->addTerm($term, $definition);
+        static::$ds->addTerm($term, $definition);
     }
 
-    public static function updateTerm($originalTerm, $newTerm, $definition)
+    public static function updateTerm($originalTerm, $newTerm, $definition): void
     {
-        return static::$ds->updateTerm($originalTerm, $newTerm, $definition);
+        static::$ds->updateTerm($originalTerm, $newTerm, $definition);
     }
 
-    public static function deleteTerm($term)
+    public static function deleteTerm(string $term): void
     {
-        return static::$ds->deleteTerm($term);
+        static::$ds->deleteTerm($term);
     }
 }

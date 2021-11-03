@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 class FileDataProvider implements DataProviderInterface
 {
-
-    function __construct($source)
+    // apply php 8 feature promoting class properties on source prop
+    function __construct(private string $source)
     {
-        $this->source = $source;
     }
 
-    public function getTerms()
+    public function getTerms(): array
     {
         $data = $this->getData();
 
@@ -18,7 +17,7 @@ class FileDataProvider implements DataProviderInterface
     }
 
     // using union types in return value, PHP 8 feature
-    public function getTerm($term)
+    public function getTerm(string $term): array | bool
     {
         $terms = $this->getTerms();
         foreach ($terms as $item) {
@@ -30,7 +29,7 @@ class FileDataProvider implements DataProviderInterface
         return false;
     }
 
-    public function updateTerm($originalTerm, $newTerm, $definition)
+    public function updateTerm(string $originalTerm, string $newTerm, string $definition): void
     {
         $terms = $this->getTerms();
 
@@ -49,7 +48,7 @@ class FileDataProvider implements DataProviderInterface
         $this->setData($terms);
     }
 
-    public function searchTerms($search)
+    public function searchTerms(string $search): array
     {
         $terms = $this->getTerms();
 
@@ -66,7 +65,7 @@ class FileDataProvider implements DataProviderInterface
         return $results;
     }
 
-    public function addTerm($term, $definition)
+    public function addTerm(string $term, string $definition): void
     {
         $items = $this->getTerms();
 
@@ -78,7 +77,7 @@ class FileDataProvider implements DataProviderInterface
         $this->setData($items);
     }
 
-    public function deleteTerm($term)
+    public function deleteTerm(string $term): void
     {
         $terms = $this->getTerms();
 
@@ -105,7 +104,7 @@ class FileDataProvider implements DataProviderInterface
         $this->setData($items);
     }
 
-    private function getData()
+    private function getData(): string
     {
         $data = '';
 
@@ -118,7 +117,7 @@ class FileDataProvider implements DataProviderInterface
         return $data;
     }
 
-    private function setData($ar)
+    private function setData($ar): void
     {
         $data = json_encode($ar, JSON_PRETTY_PRINT);
 

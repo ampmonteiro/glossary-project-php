@@ -1,19 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 # not  using for now
 // require 'glossaryterm.class.php';
 
 interface DataProviderInterface
 {
-    public function getTerms();
+    public function getTerms(): array;
 
-    public function getTerm($term);
+    // using union types in return value, PHP 8 feature
+    public function getTerm(string $term): array | bool;
 
-    public function updateTerm($original_term, $new_term, $definition);
+    public function updateTerm(string $originaTerm, string $newTerm, string $definition): void;
 
-    public function searchTerms($search);
+    public function searchTerms(string $search): array;
 
-    public function addTerm($term, $definition);
+    public function addTerm(string $term, string $definition): void;
 }
 
 // class DataProvider
