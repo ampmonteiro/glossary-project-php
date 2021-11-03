@@ -13,35 +13,35 @@ $data = [
 # i think the verify get is une
 if (is_get()) {
 
-    $key = sanitize($_GET['key']);
+    $key = sanitize(value: $_GET['key']);
 
     # more like invalid key
     if (empty($key)) {
 
-        view('not_found');
+        view(file: 'not_found');
         die();
     }
 
-    $term = Model::getTerm($key);
+    $term = Model::getTerm(term: $key);
 
     # more like data provided no exist
     if ($term == false) {
-        view('not_found');
+        view(file: 'not_found');
         die();
     }
 
     $data['item'] = $term;
 
-    view('admin/delete', $data);
+    view(file: 'admin/delete', data: $data);
 }
 
 if (is_post()) {
-    $term = sanitize($_POST['term']);
+    $term = sanitize(value: $_POST['term']);
 
     if (empty($term)) {
         # Todo dpl msg
     } else {
-        Model::deleteTerm($term);
-        redirect('admin');
+        Model::deleteTerm(term: $term);
+        redirect(url: 'admin');
     }
 }

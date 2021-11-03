@@ -21,4 +21,4 @@ $data = [
 //     $items = get_terms();
 // }
 
-view('admin/index', $data);
+view(file: 'admin/index', data: $data);

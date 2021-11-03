@@ -12,11 +12,11 @@ $data = [
 ];
 
 if (isset($_GET['search'])) {
-    $data['items']   = Model::searchTerms($_GET['search']);
+    $data['items']   = Model::searchTerms(search: $_GET['search']);
     $data['heading'] = "search result for: " . $_GET['search'];
 } else {
 
     $data['items'] = Model::getTerms();
 }
 
-view('index', $data);
+view(file: 'index', data: $data);

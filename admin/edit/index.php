@@ -13,37 +13,37 @@ $data = [
 # i think the verify get is une
 if (is_get()) {
 
-    $key = sanitize($_GET['key']);
+    $key = sanitize(value: $_GET['key']);
 
     # more like invalid key
     if (empty($key)) {
 
-        view('not_found');
+        view(file: 'not_found');
         die();
     }
 
-    $term = Model::getTerm($key);
+    $term = Model::getTerm(term: $key);
 
     # more like data provided no exist
     if ($term == false) {
-        view('not_found');
+        view(file: 'not_found');
         die();
     }
 
     $data['item'] = $term;
 
-    view('admin/edit', $data);
+    view(file: 'admin/edit', data: $data);
 }
 
 if (is_post()) {
-    $term = sanitize($_POST['term']);
-    $definition = sanitize($_POST['definition']);
-    $original_term = sanitize($_POST['original-term']);
+    $term = sanitize(value: $_POST['term']);
+    $definition = sanitize(value: $_POST['definition']);
+    $original_term = sanitize(value: $_POST['original-term']);
 
     if (empty($term) || empty($definition) || empty($original_term)) {
         # Todo dpl msg
     } else {
-        Model::updateTerm($original_term, $term, $definition);
-        redirect('admin/');
+        Model::updateTerm(originalTerm: $original_term, newTerm: $term, definition: $definition);
+        redirect(url: 'admin/');
     }
 }

@@ -13,7 +13,7 @@ class FileDataProvider implements DataProviderInterface
     {
         $data = $this->getData();
 
-        return  json_decode($data, true);
+        return  json_decode(json: $data, associative: true);
     }
 
     // using union types in return value, PHP 8 feature
@@ -45,14 +45,14 @@ class FileDataProvider implements DataProviderInterface
             }
         }
 
-        $this->setData($terms);
+        $this->setData(values: $terms);
     }
 
     public function searchTerms(string $search): array
     {
         $terms = $this->getTerms();
 
-        $results = array_filter($terms, function ($item) use ($search) {
+        $results = array_filter(array: $terms, callback: function ($item) use ($search) {
 
             if (
                 strpos($item['term'], $search) !== false ||
@@ -74,7 +74,7 @@ class FileDataProvider implements DataProviderInterface
             'definition' => $definition
         ];
 
-        $this->setData($items);
+        $this->setData(values: $items);
     }
 
     public function deleteTerm(string $term): void
@@ -101,26 +101,26 @@ class FileDataProvider implements DataProviderInterface
 
         $items = array_values($terms);
 
-        $this->setData($items);
+        $this->setData(values: $items);
     }
 
     private function getData(): string
     {
         $data = '';
 
-        if (!file_exists($this->source)) {
-            file_put_contents($this->source, '');
+        if (!file_exists(filename: $this->source)) {
+            file_put_contents(filename: $this->source, data: '');
         } else {
-            $data = file_get_contents($this->source);
+            $data = file_get_contents(filename: $this->source);
         }
 
         return $data;
     }
 
-    private function setData($ar): void
+    private function setData($values): void
     {
-        $data = json_encode($ar, JSON_PRETTY_PRINT);
+        $data = json_encode(value: $values, flags: JSON_PRETTY_PRINT);
 
-        file_put_contents($this->source, $data);
+        file_put_contents(filename: $this->source, data: $data);
     }
 }

@@ -13,15 +13,15 @@ $term  = null;
 $definition = null;
 
 if (is_post()) {
-    $term = sanitize($_POST['term']);
-    $definition = sanitize($_POST['definition']);
+    $term = sanitize(value: $_POST['term']);
+    $definition = sanitize(value: $_POST['definition']);
 
     if (empty($term) || empty($definition)) {
         # Todo dpl msg
     } else {
-        Model::addTerm($term, $definition);
-        redirect('admin/');
+        Model::addTerm(term: $term, definition: $definition);
+        redirect(url: 'admin/');
     }
 }
 
-view('admin/create', $data);
+view(file: 'admin/create', data: $data);

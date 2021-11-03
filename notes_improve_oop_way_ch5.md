@@ -6,7 +6,9 @@
 
 - named of properties and methods should be in camelCase: get_terms -> getTerms, $data_provider -> $dataProvider &#9989;
 
-- apply strict types like is in file_functions (php 7) #9989;
+- apply strict types like is in file_functions (php 7) #9989; &#9989;
+
+- Named arguments ( PHP 8 feature) in all functions e methods
 
 ## data file
 

@@ -23,26 +23,26 @@ class Model
 
     public static function getTerm(string $term): array | bool
     {
-        return static::$ds->getTerm($term);
+        return static::$ds->getTerm(term: $term);
     }
 
     public static function searchTerms(string $search): array
     {
-        return static::$ds->searchTerms($search);
+        return static::$ds->searchTerms(search: $search);
     }
 
     public static function addTerm(string $term, string $definition): void
     {
-        static::$ds->addTerm($term, $definition);
+        static::$ds->addTerm(term: $term, definition: $definition);
     }
 
     public static function updateTerm($originalTerm, $newTerm, $definition): void
     {
-        static::$ds->updateTerm($originalTerm, $newTerm, $definition);
+        static::$ds->updateTerm(originalTerm: $originalTerm, newTerm: $newTerm, definition: $definition);
     }
 
     public static function deleteTerm(string $term): void
     {
-        static::$ds->deleteTerm($term);
+        static::$ds->deleteTerm(term: $term);
     }
 }

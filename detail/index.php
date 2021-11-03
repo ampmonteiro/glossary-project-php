@@ -11,15 +11,15 @@ $data = [
 ];
 
 if (!isset($_GET['term'])) {
-    redirect('index.php');
+    redirect(url: 'index.php');
 }
 
-$data['item'] = Model::getTerm($_GET['term']); // TODO: nedd validation
+$data['item'] = Model::getTerm(term: $_GET['term']); // TODO: nedd validation
 
 if ($data['item'] === false) {
-    view('not_found');
+    view(file: 'not_found');
     die();
 }
 
 
-view('detail', $data);
+view(file: 'detail', data: $data);
