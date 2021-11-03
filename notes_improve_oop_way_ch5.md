@@ -10,6 +10,8 @@
 
 - data.class.php > Data.php
 
+- rename to Model to avoid confusion with $data variable
+
 - replace static instead of self
 
 ##  dataProvider class
