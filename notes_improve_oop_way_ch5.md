@@ -16,10 +16,9 @@
 
 ##  dataProvider class
 
-- dataprovider.class.php < DataProvider.php &#9989;
+- dataprovider.class.php > DataProvider.php &#9989;
 
-
-- should be an interface 
+- should be an interface  &#9989;
 
 ## filedataprovider
 

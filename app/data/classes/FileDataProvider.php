@@ -2,8 +2,14 @@
 
 declare(strict_types=1);
 
-class FileDataProvider extends DataProvider
+class FileDataProvider implements DataProviderInterface
 {
+
+    function __construct($source)
+    {
+        $this->source = $source;
+    }
+
 
     public function get_terms()
     {
@@ -13,7 +19,7 @@ class FileDataProvider extends DataProvider
     }
 
     // using union types in return value, PHP 8 feature
-    function get_term($term)
+    public function get_term($term)
     {
         $terms = $this->get_terms();
         foreach ($terms as $item) {

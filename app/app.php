@@ -16,6 +16,8 @@ require 'functions.php';
 
 // require 'data/file_functions.php';
 
+require 'data/DataProviderInterface.php';
+
 require 'data/classes/Data.php';
 
 require 'data/classes/FileDataProvider.php';

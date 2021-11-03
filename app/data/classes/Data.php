@@ -1,7 +1,5 @@
 <?php
 
-require 'DataProvider.php';
-
 class Data
 {
     /**
@@ -11,7 +9,7 @@ class Data
 
     private static $ds;
 
-    public static function initialize(DataProvider  $data_provider)
+    public static function initialize(DataProviderInterface $data_provider)
     {
         static::$ds = $data_provider;
     }
