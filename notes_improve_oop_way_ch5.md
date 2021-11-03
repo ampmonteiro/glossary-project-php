@@ -12,7 +12,7 @@
 
 - rename to Model to avoid confusion with $data variable
 
-- replace static instead of self
+- replace static instead of self &#9989;
 
 ##  dataProvider class
 
