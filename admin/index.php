@@ -8,7 +8,7 @@ ensure_user_is_authenticated();
 
 $data = [
     'title'  => 'Glossary Admin List',
-    'items'  => Data::get_terms()
+    'items'  => Model::get_terms()
 ];
 
 // $items = [];

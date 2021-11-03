@@ -10,7 +10,7 @@
 
 - data.class.php > Data.php &#9989;
 
-- rename to Model to avoid confusion with $data variable
+- rename to Model to avoid confusion with $data variable &#9989;
 
 - replace static instead of self &#9989;
 

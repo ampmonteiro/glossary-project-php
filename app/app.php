@@ -18,8 +18,8 @@ require 'functions.php';
 
 require 'data/DataProviderInterface.php';
 
-require 'data/classes/Data.php';
+require 'data/classes/Model.php';
 
 require 'data/classes/FileDataProvider.php';
 
-Data::initialize(new FileDataProvider(CONFIG['data_file']));
+Model::initialize(new FileDataProvider(CONFIG['data_file']));

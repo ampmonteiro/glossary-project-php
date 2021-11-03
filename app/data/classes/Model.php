@@ -1,6 +1,6 @@
 <?php
 
-class Data
+class Model
 {
     /**
      *  first visability | static or not | name of fn
