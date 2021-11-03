@@ -22,7 +22,7 @@ if (is_get()) {
         die();
     }
 
-    $term = get_term($key);
+    $term = Data::get_term($key);
 
     # more like data provided no exist
     if ($term == false) {
@@ -41,7 +41,7 @@ if (is_post()) {
     if (empty($term)) {
         # Todo dpl msg
     } else {
-        delete_term($term);
+        Data::delete_term($term);
         redirect('admin');
     }
 }

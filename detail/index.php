@@ -14,7 +14,7 @@ if (!isset($_GET['term'])) {
     redirect('index.php');
 }
 
-$data['item'] = get_term($_GET['term']); // TODO: nedd validation
+$data['item'] = Data::get_term($_GET['term']); // TODO: nedd validation
 
 if ($data['item'] === false) {
     view('not_found');

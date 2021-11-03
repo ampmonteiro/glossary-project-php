@@ -19,7 +19,7 @@ if (is_post()) {
     if (empty($term) || empty($definition)) {
         # Todo dpl msg
     } else {
-        add_term($term, $definition);
+        Data::add_term($term, $definition);
         redirect('admin/');
     }
 }

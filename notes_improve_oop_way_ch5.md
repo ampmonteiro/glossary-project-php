@@ -16,9 +16,8 @@
 
 - dataprovider.class.php < DataProvider.php
 
-- should be an interface 
 
-- apply php 8 feature promoting class properties on source prop
+- should be an interface 
 
 ## filedataprovider
 
@@ -26,10 +25,14 @@
 
 - get_terms methods should be centralized into construtor
 
+- apply php 8 feature promoting class properties on source prop
+
 
 ## glossaryterm
 
 - glossaryterm.class.php > GlossaryTerm.php
+
+- defining props with types (in this case all are string type) outside of constructor 
 
 - apply php 8 feature promoting class properties on source prop
 
