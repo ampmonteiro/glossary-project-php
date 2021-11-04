@@ -13,7 +13,7 @@ class DataProvider
         $this->source = $source;
     }
 
-    public function get_terms($ar = false)
+    public function get_terms()
     {
     }
 

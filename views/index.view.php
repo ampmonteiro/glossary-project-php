@@ -13,7 +13,7 @@
     <?php foreach ($model as $item) : ?>
         <tr>
             <td>
-                <a href="detail.php?term=<?= $item->term ?> ">
+                <a href="detail.php?term=<?= $item->id ?> ">
                     <?= $item->term; ?>
                 </a>
             </td>

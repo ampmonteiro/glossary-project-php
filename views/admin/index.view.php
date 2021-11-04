@@ -10,7 +10,7 @@
     <?php foreach ($model as $item) : ?>
         <tr>
             <td>
-                <a href="edit.php?key=<?= $item->term ?>">
+                <a href="edit.php?key=<?= $item->id ?>">
                     Edit
                 </a>
             </td>
@@ -21,7 +21,7 @@
                 <?= $item->definition; ?>
             </td>
             <td>
-                <a href="delete.php?key=<?= $item->term ?>">
+                <a href="delete.php?key=<?= $item->id ?>">
                     Delete
                 </a>
             </td>

@@ -8,7 +8,7 @@
     </strong>
 </p>
 <form method="post">
-    <input type="hidden" name="term" value="<?= $model->term ?>">
+    <input type="hidden" name="term" value="<?= $model->id ?>">
 
     <section class="text-center">
         <button class="btn btn-warning">Delete</button>

@@ -3,7 +3,7 @@
 </h1>
 
 <form method="post">
-    <input type="hidden" name="original-term" value="<?= $model->term ?>">
+    <input type="hidden" name="original-term" value="<?= $model->id ?>">
     <section class="mb-3">
         <label for="term">Term</label>
         <br>
