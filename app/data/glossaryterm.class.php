@@ -1,6 +1,6 @@
 <?php
 
-class GloassaryTerm
+class GlossaryTerm
 {
     // because of association with PDO fetch all
     public $id;

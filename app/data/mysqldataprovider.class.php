@@ -27,7 +27,7 @@ class MysqlDataProvider extends DataProvider
         ]);
 
         // should be using fetch instead of fetch all
-        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GloassaryTerm');
+        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
 
         $smt = null;
 
@@ -132,7 +132,7 @@ class MysqlDataProvider extends DataProvider
             $query->execute($params);
         }
 
-        $data = $query->fetchAll(PDO::FETCH_CLASS, 'GloassaryTerm');
+        $data = $query->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
 
         $query = null;
 
