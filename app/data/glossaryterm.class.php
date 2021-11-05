@@ -1,6 +1,6 @@
 <?php
 
-class GloassaryTerm
+class GlossaryTerm
 {
     public function __construct($term, $definition)
     {

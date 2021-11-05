@@ -65,7 +65,7 @@ class FileDataProvider extends DataProvider
     {
         $items = $this->get_terms();
 
-        $items[] = new GloassaryTerm($term, $definition);
+        $items[] = new GlossaryTerm($term, $definition);
 
         $this->set_data($items);
     }
