@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-# not  using for now
-// require 'glossaryterm.class.php';
-
 interface DataProviderInterface
 {
     public function getTerms(): array;
@@ -17,6 +14,8 @@ interface DataProviderInterface
     public function searchTerms(string $search): array | object | bool;
 
     public function addTerm(string $term, string $definition): void;
+
+    public function deleteTerm(string | int $term): void;
 }
 
 // class DataProvider

@@ -29,7 +29,7 @@ class FileDataProvider implements DataProviderInterface
         return false;
     }
 
-    public function updateTerm(string $originalTerm, string $newTerm, string $definition): void
+    public function updateTerm(string | int $originalTerm, string $newTerm, string $definition): void
     {
         $terms = $this->getTerms();
 
@@ -77,7 +77,7 @@ class FileDataProvider implements DataProviderInterface
         $this->setData(values: $items);
     }
 
-    public function deleteTerm(string $term): void
+    public function deleteTerm(string | int $term): void
     {
         $terms = $this->getTerms();
 
