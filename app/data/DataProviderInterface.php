@@ -17,6 +17,8 @@ interface DataProviderInterface
     public function searchTerms(string $search): array;
 
     public function addTerm(string $term, string $definition): void;
+
+    public function deleteTerm(string $term): void;
 }
 
 // class DataProvider
