@@ -20,6 +20,12 @@ require 'data/DataProviderInterface.php';
 
 require 'data/classes/Model.php';
 
-require 'data/classes/FileDataProvider.php';
+// require 'data/classes/FileDataProvider.php';
 
-Model::initialize(new FileDataProvider(CONFIG['data_file']));
+// Model::initialize(new FileDataProvider(CONFIG['data_file']));
+
+require 'data/classes/GlossaryTerm.php';
+
+require 'data/mysqldataprovider.class.php';
+
+Model::initialize(new MysqlDataProvider(CONFIG['db']));

@@ -12,18 +12,18 @@
     <?php foreach ($items as $item) : ?>
         <tr>
             <td>
-                <a href="edit/?key=<?= $item['term']; ?>">
+                <a href="edit/?key=<?= $item->id; ?>">
                     Edit
                 </a>
             </td>
             <td>
-                <?= $item['term']; ?>
+                <?= $item->term; ?>
             </td>
             <td>
-                <?= $item['definition']; ?>
+                <?= $item->definition; ?>
             </td>
             <td>
-                <a href="delete/?key=<?= $item['term']; ?>">
+                <a href="delete/?key=<?= $item->id; ?>">
                     Delete
                 </a>
             </td>

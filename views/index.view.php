@@ -13,12 +13,12 @@
     <?php foreach ($items as $item) : ?>
         <tr>
             <td>
-                <a href="/detail?term=<?= $item['term'] ?> ">
-                    <?= $item['term']; ?>
+                <a href="/detail?term=<?= $item->id ?> ">
+                    <?= $item->term; ?>
                 </a>
             </td>
             <td>
-                <?= $item['definition']; ?>
+                <?= $item->definition; ?>
             </td>
         </tr>
     <?php endforeach; ?>

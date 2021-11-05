@@ -4,11 +4,11 @@
 <p>
     Are you sure you want to delete
     <strong>
-        <?= $item['term']; ?> ?
+        <?= $item->term; ?> ?
     </strong>
 </p>
 <form method="post">
-    <input type="hidden" name="term" value="<?= $item['term']; ?>">
+    <input type="hidden" name="term" value="<?= $item->id; ?>">
 
     <section class="text-center">
         <button class="btn btn-warning">Delete</button>

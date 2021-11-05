@@ -10,11 +10,11 @@ interface DataProviderInterface
     public function getTerms(): array;
 
     // using union types in return value, PHP 8 feature
-    public function getTerm(string $term): array | bool;
+    public function getTerm(string $term): array | bool | object;
 
-    public function updateTerm(string $originaTerm, string $newTerm, string $definition): void;
+    public function updateTerm(string | int $originaTerm, string $newTerm, string $definition): void;
 
-    public function searchTerms(string $search): array;
+    public function searchTerms(string $search): array | object | bool;
 
     public function addTerm(string $term, string $definition): void;
 }

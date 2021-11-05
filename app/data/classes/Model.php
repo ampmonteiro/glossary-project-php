@@ -21,7 +21,7 @@ class Model
         return static::$ds->getTerms();
     }
 
-    public static function getTerm(string $term): array | bool
+    public static function getTerm(string $term): array | bool | object
     {
         return static::$ds->getTerm(term: $term);
     }
