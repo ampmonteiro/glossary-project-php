@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 #in this original add interface to this provider
 
 class MysqlDataProvider implements DataProviderInterface
@@ -33,19 +35,21 @@ class MysqlDataProvider implements DataProviderInterface
             ':id' => $term
         ]);
 
-        // should be using fetch instead of fetch all
-        $data = $smt->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
+        // docs: https://www.php.net/manual/de/pdostatement.fetch.php
+        // look for: Beispiel #3 Construction order
+        // also https://www.php.net/manual/en/class.pdostatement.php
+        $smt->setFetchMode(PDO::FETCH_CLASS, 'GlossaryTerm');
+
+        // it do not acept PDO::FETCH_CLAS with a class use defined
+        $data = $smt->fetch();
 
         $smt = null;
-
-        // $this->db = null;
 
         if (empty($data)) {
             return new stdClass();
         }
 
-        // unecessary if using fetch instead of fetch all
-        return $data[0];
+        return $data;
     }
 
     public function searchTerms(string $search): array | bool
@@ -151,7 +155,15 @@ class MysqlDataProvider implements DataProviderInterface
     {
 
         try {
-            return new PDO($this->source, CONFIG['db_user'], CONFIG['db_password']);
+            $tmp =  new PDO($this->source, CONFIG['db_user'], CONFIG['db_password']);
+
+            // to make sure that each column come with correct type
+            // you dont need this configuration if are using the PDO::FETCH_CLASS with class name 
+            // with type hint, by declaring each prop with correct type in the class
+
+            $tmp->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            return $tmp;
         } catch (PDOException $e) {
             echo $e->getMessage();
 

@@ -12,7 +12,7 @@
 
     3. create a property that receive the instance of PDO from connect method &#9989;
 
-    4. getTerm change fetchAll to fetch, since you want only one row
+    4. getTerm change fetchAll to fetch, since you want only one row &#9989;
 
 - organize better the App folder, i.e:
     -> creating _src folder
