@@ -24,8 +24,11 @@ require 'data/classes/Model.php';
 
 // Model::initialize(new FileDataProvider(CONFIG['data_file']));
 
+// require 'data/mysqldataprovider.class.php';
+
 require 'data/classes/GlossaryTerm.php';
 
-require 'data/mysqldataprovider.class.php';
+require 'data/classes/MySqlDataProvider.php';
+
 
 Model::initialize(new MysqlDataProvider(CONFIG['db']));
