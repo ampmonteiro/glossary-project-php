@@ -4,10 +4,14 @@
 
 class MysqlDataProvider implements DataProviderInterface
 {
+    private PDO $db;
+
+
     // apply php 8 feature promoting class properties on source prop
-    function __construct(
+    public function __construct(
         private string $source
     ) {
+        $this->db = $this->connect();
     }
 
     public function getTerms(): array
@@ -17,14 +21,13 @@ class MysqlDataProvider implements DataProviderInterface
 
     public function getTerm(string $term): object
     {
-        $db = $this->connect();
 
-        if ($db === null) {
+        if ($this->db === null) {
             return new stdClass();
         }
 
         $sql = 'SELECT * FROM terms WHERE id = :id';
-        $smt = $db->prepare($sql);
+        $smt = $this->db->prepare($sql);
 
         $smt->execute([
             ':id' => $term
@@ -35,7 +38,7 @@ class MysqlDataProvider implements DataProviderInterface
 
         $smt = null;
 
-        $db = null;
+        // $this->db = null;
 
         if (empty($data)) {
             return new stdClass();
@@ -101,26 +104,26 @@ class MysqlDataProvider implements DataProviderInterface
 
     private function execute(string $sql, array $params = []): void
     {
-        $db = $this->connect();
 
-        if ($db === null) {
+        if ($this->db === null) {
             return;
         }
 
-        $smt = $db->prepare($sql);
+        $smt = $this->db->prepare($sql);
 
         $smt->execute($params);
 
         $smt = null;
 
-        $db = null;
+        // this should not be needed because it is closed when finished the script
+
+        // $this->db = null;
     }
 
     private function query(string $sql, array $params = []): array | bool
     {
-        $db = $this->connect();
 
-        if ($db === null) {
+        if ($this->db === null) {
             return [];
         }
 
@@ -128,9 +131,9 @@ class MysqlDataProvider implements DataProviderInterface
 
         if (empty($params)) {
 
-            $query = $db->query($sql);
+            $query = $this->db->query($sql);
         } else {
-            $query = $db->prepare($sql);
+            $query = $this->db->prepare($sql);
             $query->execute($params);
         }
 
@@ -138,7 +141,8 @@ class MysqlDataProvider implements DataProviderInterface
 
         $query = null;
 
-        $db = null;
+        // this should not be needed because it is closed when finished the script
+        // $this->db = null;
 
         return $data;
     }

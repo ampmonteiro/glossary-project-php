@@ -6,13 +6,17 @@
 
 - in mysqldataprovider / MySQLDataProvider.php change:
 
-    1. connect method should be call only once and in construct
+    1. connect method should be call only once and in construct &#9989;
 
-    2. remove the call of connect method in  query and execute
+    2. remove the call of connect method in  query and execute &#9989;
 
-    3. create a property that receive the instance of PDO from connect method
+    3. create a property that receive the instance of PDO from connect method &#9989;
 
     4. getTerm change fetchAll to fetch, since you want only one row
+
+- organize better the App folder, i.e:
+    -> creating _src folder
+    ->  create folders _core, _data  and app
 
 
 
