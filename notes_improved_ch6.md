@@ -15,8 +15,9 @@
     4. getTerm change fetchAll to fetch, since you want only one row &#9989;
 
 - organize better the App folder, i.e:
-    -> creating _src folder
-    ->  create folders _core, _data  and app
+    -> create _src folder &#9989;
+    -> create folders classes, functions, data and interfaces &#9989;
+    -> move views folder into _src folder &#9989;
 
 
 

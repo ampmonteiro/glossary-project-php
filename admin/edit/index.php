@@ -2,7 +2,7 @@
 
 session_start();
 
-require '../../app/app.php';
+require '../../_src/app.php';
 
 ensure_user_is_authenticated();
 

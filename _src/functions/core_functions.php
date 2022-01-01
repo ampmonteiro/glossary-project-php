@@ -14,7 +14,9 @@ function view(string $file, array $data = []): void
 
     extract($data);
 
-    require APP_PATH . "views/layout.view.php";
+    // require APP_PATH . "views/layout.view.php";
+
+    require APP_PATH . '_src/views/layout.view.php';
 }
 
 function is_post(): bool

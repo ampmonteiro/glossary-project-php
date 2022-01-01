@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 session_start();
 
-require 'app/app.php';
+require '_src/app.php';
 
 $data = [
     'title'  =>  'Glossary List',

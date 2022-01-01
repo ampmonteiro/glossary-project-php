@@ -6,6 +6,6 @@ session_start();
 session_unset();
 session_destroy();
 
-require '../app/app.php';
+require '../_src/app.php';
 
 redirect('login');
