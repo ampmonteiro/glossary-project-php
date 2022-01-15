@@ -41,7 +41,14 @@ $is_auth = is_user_authenticated();
     </header>
 
     <div class="container mt-3">
-        <?php require $file . '.view.php'; ?>
+
+        <?= $content; ?>
+
+        <?php
+        # require $file . '.view.php'; 
+        ?>
+
+
     </div>
 
 </body>

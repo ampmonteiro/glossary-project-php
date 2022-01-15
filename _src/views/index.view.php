@@ -7,9 +7,10 @@
         <input name="search" class="form-control" id="search" placeholder="">
         <label for="search">Search term</label>
     </section>
+    <small>hint: press enter</small>
 </form>
 
-<table class="table table-striped">
+<table class="table table-striped mt-3">
     <?php foreach ($items as $item) : ?>
         <tr>
             <td>

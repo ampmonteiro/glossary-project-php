@@ -54,12 +54,13 @@ class MysqlDataProvider implements DataProviderInterface
 
     public function searchTerms(string $search): array | bool
     {
-        $sql = 'SELECT * FROM terms WHERE term LIKE :search OR definition like :search';
+        $sql = 'SELECT * FROM terms WHERE term LIKE :term OR definition like :def';
 
         return $this->query(
             $sql,
             [
-                ':search' => '%' . $search . '%'
+                ':term' => '%' . $search . '%',
+                ':def' => '%' . $search . '%',
             ]
         );
     }
