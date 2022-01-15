@@ -21,5 +21,6 @@
 
 - improve view function, with new way load layout view &#9989;
 
-- escape all params with htmlspecial chars
+- escape all views with htmlspecial chars &#9989;
 
+- sanitize str and int in edit and create &#9989;

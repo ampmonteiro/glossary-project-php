@@ -142,12 +142,12 @@ class MysqlDataProvider implements DataProviderInterface
             $query->execute($params);
         }
 
+        // for better performance:
+        // Note: should be using fetch with foreach or while 
+
         $data = $query->fetchAll(PDO::FETCH_CLASS, 'GlossaryTerm');
 
         $query = null;
-
-        // this should not be needed because it is closed when finished the script
-        // $this->db = null;
 
         return $data;
     }

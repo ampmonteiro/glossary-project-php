@@ -53,6 +53,8 @@ function view(string $file, array $data = [], string $layout = ''): void
 
     include_once $choosed_layout;
 }
+
+
 function is_post(): bool
 {
     return $_SERVER['REQUEST_METHOD'] === 'POST';
@@ -64,10 +66,25 @@ function is_get(): bool
     return $_SERVER['REQUEST_METHOD'] === 'GET';
 }
 
+/**
+ * @param bool $strict true:  will remove html tags
+ */
 
-function sanitize(string $value): string
+function sanitize_str(string $value, $strict = false): string
 {
-    $temp = filter_var(trim($value), FILTER_SANITIZE_STRING);
+    $temp = null;
+
+    if ($strict) {
+
+        $temp = filter_var(strip_tags(trim($value)), FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+
+    if (!$strict) {
+        $temp = filter_var(trim($value), FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+
+
+    // $temp = esc(trim($value));
 
     if ($temp === false) {
         return '';
@@ -75,6 +92,29 @@ function sanitize(string $value): string
 
     return $temp;
 }
+
+function sanitize_int(string $value): string
+{
+
+    $temp = filter_var(trim($value), FILTER_SANITIZE_NUMBER_INT);
+
+    // $temp = esc(trim($value));
+
+    if ($temp === false) {
+        return '';
+    }
+
+    return $temp;
+}
+
+/**
+ * Escaping html and etc
+ */
+function esc($val): mixed
+{
+    return htmlspecialchars(string: $val, flags: ENT_QUOTES, encoding: 'UTF-8', double_encode: false);
+}
+
 
 function authenticate_user(string $email, string $password): bool
 {

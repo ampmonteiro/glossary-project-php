@@ -14,9 +14,7 @@
             when put textarea value in another line
     -->
     <section class="form-floating mb-3">
-        <textarea class="form-control h-50" style="white-space:pre-line;" name="definition" id="def" placeholder="">
-            <?= trim($item->definition); ?>        
-        </textarea>
+        <textarea class="form-control h-50" style="white-space:pre-line;" name="definition" id="def" placeholder=""><?= trim($item->definition); ?></textarea>
         <label for="def">Definition</label> <br>
     </section>
 

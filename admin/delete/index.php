@@ -13,7 +13,7 @@ $data = [
 # i think the verify get is une
 if (is_get()) {
 
-    $key = sanitize(value: $_GET['key']);
+    $key = sanitize_int(value: $_GET['key']);
 
     # more like invalid key
     if (empty($key)) {
@@ -36,7 +36,7 @@ if (is_get()) {
 }
 
 if (is_post()) {
-    $term = sanitize(value: $_POST['term']);
+    $term = sanitize_int(value: $_POST['term']);
 
     if (empty($term)) {
         # Todo dpl msg

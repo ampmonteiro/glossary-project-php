@@ -44,11 +44,6 @@ $is_auth = is_user_authenticated();
 
         <?= $content; ?>
 
-        <?php
-        # require $file . '.view.php'; 
-        ?>
-
-
     </div>
 
 </body>

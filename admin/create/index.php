@@ -13,8 +13,8 @@ $term  = null;
 $definition = null;
 
 if (is_post()) {
-    $term = sanitize(value: $_POST['term']);
-    $definition = sanitize(value: $_POST['definition']);
+    $term = sanitize_str(value: $_POST['term'], strict: true);
+    $definition = sanitize_str(value: $_POST['definition'], strict: true);
 
     if (empty($term) || empty($definition)) {
         # Todo dpl msg

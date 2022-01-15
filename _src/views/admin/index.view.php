@@ -17,10 +17,10 @@
                 </a>
             </td>
             <td>
-                <?= $item->term; ?>
+                <?= esc($item->term); ?>
             </td>
             <td>
-                <?= $item->definition; ?>
+                <?= esc($item->definition); ?>
             </td>
             <td>
                 <a href="delete/?key=<?= $item->id; ?>">

@@ -10,16 +10,16 @@
     <small>hint: press enter</small>
 </form>
 
-<table class="table table-striped mt-3">
+<table class="table table-striped">
     <?php foreach ($items as $item) : ?>
         <tr>
             <td>
-                <a href="/detail?term=<?= $item->id ?> ">
-                    <?= $item->term; ?>
+                <a href="/detail?term=<?= $item->id; ?>">
+                    <?= esc($item->term); ?>
                 </a>
             </td>
             <td>
-                <?= $item->definition; ?>
+                <?= esc($item->definition); ?>
             </td>
         </tr>
     <?php endforeach; ?>
