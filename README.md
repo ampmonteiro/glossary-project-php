@@ -1,11 +1,11 @@
-# Web glossary project in vannilla PHP
+# Web glossary project in vanilla PHP
 
 - from the course: [PHP Fundamentals by EnvatoTuts](https://code.tutsplus.com/courses/php-fundamentals)
 - repository of original project: [php-fundamentals-2017 ](https://github.com/tutsplus/php-fundamentals-2017)
 
 ### goals:
 
-- relearning the fundaments of vannilla PHP
+- relearning the fundaments of vanilla PHP
 - learning modern and newest PHP (PHP 8)
 - improved original project since chapter 4 until chapter 6:
 
