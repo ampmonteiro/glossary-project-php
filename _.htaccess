@@ -1,0 +1,11 @@
+AcceptPathInfo On
+# activate mod rewrite
+RewriteEngine On
+# if not find file
+RewriteCond %{REQUEST_FILENAME} !-f 
+#if not file directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# redirect internally any request to index.php file
+RewriteRule ^(.*)$ index.php [QSA,L]
+# go to index.php [L] -> last rule to parse
+# With the [QSA] flag, https://httpd.apache.org/docs/2.4/rewrite/flags.html#flag_qsa
