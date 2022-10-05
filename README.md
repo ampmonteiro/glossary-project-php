@@ -26,3 +26,9 @@ Improved:
 - need web server like apache or ngnix
 - DB: MySQL or MariaDB
 - Optional: with Docker, it is provide some related files
+
+### Note:
+
+- main branch has not the last changes
+- choose a branch
+- more update and last changes is ch6
