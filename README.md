@@ -11,7 +11,7 @@
 
   - by using Docker ( PHP + MySQL + Apache) with VS Code
   - better code organization / folder struture
-  - by using modern OOP and strick types
+  - by using modern OOP and strict_types
   - Better UI (from Bootstrap 4 to Bootstrap 5)
 
 orginal:
