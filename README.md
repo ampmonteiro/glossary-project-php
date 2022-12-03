@@ -26,6 +26,8 @@ Improved:
 - need web server like apache or ngnix
 - DB: MySQL or MariaDB
 - Optional: with Docker, it is provide some related files
+- Note: Docker using MySQL container without using Docker compose:
+  - verify the ip address of the container, usually 172.17.0.3
 
 ### Note:
 

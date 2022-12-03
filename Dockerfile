@@ -7,12 +7,14 @@ RUN  a2enmod rewrite && service apache2 restart &&  docker-php-ext-install pdo_m
 
 WORKDIR /var/www/html
 
-COPY --chown=app src/ .
-
 USER app
 
 EXPOSE 80
 
-# docker run -v $(pwd)/src:/var/www/html -dp 80:80 apache-php:8.0
+# docker build -t apache-php:7.3 .
+# docker run -v $(pwd)/src:/var/www/html -dp 80:80 apache-php:7.3
 
-#docker run --name my-db -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=suggestotron -e MYSQL_USER=dev  -e MYSQL_PASSWORD=secret -dp 3306:3306  mysql
+# docker run --name my-db -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=suggestotron -e MYSQL_USER=dev  -e MYSQL_PASSWORD=secret -dp 3306:3306  mysql
+
+# NOTE verify which ip Address / host has the mysql container, you are not using docker compose
+# usually: 172.17.0.3
