@@ -14,10 +14,17 @@
   - by using modern OOP and strict_types
   - Better UI (from Bootstrap 4 to Bootstrap 5)
 
-orginal:
+### Notes:
+
+- main branch has not the last changes
+- choose a branch
+- more update and last changes is [ch6-improved ](https://github.com/ampmonteiro/glossary-project-php/tree/ch6_improved)
+
+### original:
+
 ![Web Glossary original](/web-glossary-php.png 'Original UI')
 
-Improved:
+### Improved:
 
 ![Web Glossary improved](/glossary_improved.png 'Improved UI')
 
@@ -28,9 +35,3 @@ Improved:
 - Optional: with Docker, it is provide some related files
 - Note: Docker using MySQL container without using Docker compose:
   - verify the ip address of the container, usually 172.17.0.3
-
-### Note:
-
-- main branch has not the last changes
-- choose a branch
-- more update and last changes is ch6
